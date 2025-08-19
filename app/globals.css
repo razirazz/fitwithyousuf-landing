@@ -1,26 +1,75 @@
 @import "tailwindcss";
+@tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+} */
 
-@theme inline {
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-inter: var(--font-inter);
+  --font-urbanist: var(--font-urbanist);
+} */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-color-scheme) {
+  :root.dark {
+    --background: #0E1A1F;
+    --text-color: #FFFFFF;
+    --highlight-color: #D6FF33;
+    --card1-bg: #0A0E15;
+    --card1-blur: #7AA9FA;
+    --card2-bg: #141A09;
+    --card2-blur: #D6FA93;
+    --card3-bg: #0D060C;
+    --card3-blur: #FACAF7;
+    --card4-bg: #0B0812;
+    --card4-blur: #DBCCFF;
+    --card5-bg: #17150A;
+    --card5-blur: #FFF9D9;
+    --card6-bg: #0E1A1F;
+    --card6-blur: #C9EFFF;
+    --rainbow1: #4A8CFF;
+    --rainbow2: #C0FF4A;
+    --rainbow3: #FF4DF3;
+    --rainbow4: #8957FF;
+    --rainbow5: #FAEB96;
+    --rainbow6: #63D0FF;
+  }
+
+  :root.light {
+    --background: #E0E0E0;
+    --text-color: #000000;
+    --highlight-color: #5F5CFF;
+    --card1-bg: #0A0E15;
+    --card1-blur: #7AA9FA;
+    --card2-bg: #141A09;
+    --card2-blur: #D6FA93;
+    --card3-bg: #0D060C;
+    --card3-blur: #FACAF7;
+    --card4-bg: #0B0812;
+    --card4-blur: #DBCCFF;
+    --card5-bg: #17150A;
+    --card5-blur: #FFF9D9;
+    --card6-bg: #0E1A1F;
+    --card6-blur: #C9EFFF;
+    --rainbow1: #4A8CFF;
+    --rainbow2: #C0FF4A;
+    --rainbow3: #FF4DF3;
+    --rainbow4: #8957FF;
+    --rainbow5: #FAEB96;
+    --rainbow6: #63D0FF;
+    
   }
 }
 
-body {
+html, body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  font-family: var(--font-inter), var(--font-urbanist);
+  letter-spacing: 1px;
+  line-height: 1.875em;
 }
